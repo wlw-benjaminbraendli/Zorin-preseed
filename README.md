@@ -1,17 +1,24 @@
 # Zorin-preseed
 This Repository has every file, which is needed to make a preseeded installation of the Zorin OS 15
 
-Every file in the directory "files" is copied to the targetsystem after a successfull installation of the OS. The directory is located in the "/home/" directory of the final system.
+##Directory "files"
+The Directory will be copied to the */home/* directory on the target system. This could be used to make chages on the target system after the installation.
 
-The file "ks.preseed" has the commands for ubiquity to install the system unattended. The most of the commands are read from a installed system and saved in the file. At the end of the file are the personalised commands.
+##File "ks.preseed"
+This file gives the commands to ubiquity for the preseeded installation. The most of the commands are read from a installed system and saved in the file. At the end of the file are the personalised commands.
 
-The file "er.preseed" is the same, only one command is additional. The command excecute the bash-script "erase.sh". This script clean every found storagge, except the installmedium.
+##File "er.preseed"
+This file is nearly identical to the file *ks.preseed*, ther is only one additional command. The command excecute the bash-script "erase.sh". It is excecutet bevor the partioning.
 
-The file "erase.sh" is a bashscript excecuted from the er.preseed installation. It search for storagge and start for every of these the file "hpdarm.sh". The last storage will be excluded of the cleaning, because ist is the installdevice.
+##File "erase.sh"
+This file is a bashscript, which search for storagedevices an excecute the *hpdarm.sh* for every of them. Only the last device is excluded, because this is mostly the installmedium.
 
-The file "hpdarm.sh" is a bashscript, which clean a storagedevice. It tries to use the hpdarm software. If it fails, every bit of the storage will be overwritten with a random number.
+###File "hpdarm.sh"
+This File is a bashscript, which erase a storagedevice. It use *hpdarm*, if it fails, it use *dd* to overwrite the device with random numbers.
 
-The file "menuentries.cfg" could be found in the directory "isolinux" and manage the bootmenue for legacy boot.
+##File "menuentries.cfg"
+This file is found in the directory *isolinux" of the original image. It is used to generate the bootmenue for the legacy boot.
 
-The file "loopback.cfg" could be found in the directory "boot/grub" and manage the bootmenue for EFI boot.
+##File "loopback.cfg"
+This file is found in the directory *boot/grub* of the original image. It is used to generate the bootmenue for the EFI boot.
 
