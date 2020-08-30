@@ -17,8 +17,16 @@ This file is a bashscript, which search for storagedevices an excecute the *hpda
 This File is a bashscript, which erase a storagedevice. It use *hpdarm*, if it fails, it use *dd* to overwrite the device with random numbers.
 
 ## File "menuentries.cfg"
-This file is found in the directory *isolinux" of the original image. It is used to generate the bootmenue for the legacy boot.
+This file is found in the directory *isolinux* of the original image. It is used to generate the bootmenue for the legacy boot.
 
 ## File "loopback.cfg"
 This file is found in the directory *boot/grub* of the original image. It is used to generate the bootmenue for the EFI boot.
+
+## Workflow
+	1. To modify an existing image, you have to mount the existing image und copy everything to an existing directory.
+	2. Now is it possible to make the changes.
+	3. With the following command you can creat a *.iso* file from the working directory. 
+'''
+mkisofs -D -r -V "UNATTENDED-ZORIN" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -noemul-boot -boot-load-size 4 -boot-info-table -o /tmp/Zorin-unattanded.iso /opt/ubuntuiso
+'''
 
