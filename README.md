@@ -27,7 +27,7 @@ This file is found in the directory *boot/grub* of the original image. It is use
 	2. Now is it possible to make the changes.
 	3. With the following command you can creat a *.iso* file from the working directory. 
 
-"""
+```
 mkisofs -D -r -V "UNATTENDED-ZORIN" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -noemul-boot -boot-load-size 4 -boot-info-table -o /tmp/Zorin-unattanded.iso /opt/ubuntuiso
-"""
+```
 
