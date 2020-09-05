@@ -20,7 +20,7 @@ This File is a bashscript, which erase a memorydevice. It use *hpdarm*, if it fa
 ## File "menuentries.cfg"
 This file is found in the directory *isolinux* of the original image. It is used to generate the bootmenue for the legacy boot.
 
-## File "locaale"
+## File "locale"
 this file contains the localization of the system. It is copied from a manually installed system. The presseded installation will copy it to the directory */etc/default*. In a single user system will this set the localisation.
 At the moment a copy of this file lays in the directory *files* and will be copied a second time trough the personalisation step in the installed system.
 
