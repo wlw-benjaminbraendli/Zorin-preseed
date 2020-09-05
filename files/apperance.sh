@@ -5,4 +5,5 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ch')]"
 gsettings set org.gnome.system.locale region "de_CH.UTF-8"
 sudo cp /home/files/locale /etc/default/locale
 sudo timedatectl set-timezone Europe/Berlin
-sudo reboot
+#sudo reboot
+bash hintergrund.sh

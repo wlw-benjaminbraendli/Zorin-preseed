@@ -1,7 +1,8 @@
 #!/bin/bash
 echo "start erase"
+systemctl suspend
 sleep 20
-list=$(ls /dev | grep "sd"[a-z]$)
+list=$(lsblk | grep -o "sd"[a-z] | uniq)
 declare -a liste
 for i in $list
   do
@@ -13,14 +14,14 @@ for i in "${liste[@]}"
     sudo bash /cdrom/hdparm.sh /dev/$i
 done
 
-list=$(ls /dev | grep "nvme"[0-9][a-z][0-9]$)
-declare -a liste
+list=$(lsblk | grep -o "nvme"[0-9][a-z][0-9] | uniq)
+declare -a liste1
 for i in $list
   do
     liste+=($i)
 done
-#unset 'liste[${#liste[@]}-1]'
-for i in "${liste[@]}"
+#unset 'liste1[${#liste1[@]}-1]'
+for i in "${liste1[@]}"
   do
     sudo bash /cdrom/hdparm.sh /dev/$i
 done
