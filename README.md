@@ -24,8 +24,8 @@ This file is found in the directory *isolinux* of the original image. It is used
 this file contains the localization of the system. It is copied from a manually installed system. The presseded installation will copy it to the directory */etc/default*. In a single user system will this set the localisation.
 At the moment a copy of this file lays in the directory *files* and will be copied a second time trough the personalisation step in the installed system.
 
-## File "loopback.cfg"
-This file is found in the directory *boot/grub* of the original image. It is used to generate the bootmenue for the EFI boot.
+## File "grub.cfg"
+This file is found in the directory *boot/grub* of the original image. It is used to generate the bootmenue for the EFI boot. The first half of the file for the visual expression and can be ignored. the second part is similar to *menuentries.cfg* and has the same parameters.
 
 ## Workflow to create an preseeded image
 1. To modify an existing image, you have to mount the existing image und copy everything to an existing directory.
