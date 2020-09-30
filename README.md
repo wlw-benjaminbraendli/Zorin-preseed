@@ -10,6 +10,12 @@ This file gives the commands to ubiquity for the preseeded installation. The mos
 ## File "er.preseed"
 This file is nearly identical to the file *ks.preseed*, ther is only one additional command. The command excecute the bash-script "erase.sh". It is excecutet bevor the partioning.
 
+## File "ksap.preseed"
+This file is similar to *ks.preseed* but copies to scripts at the end of the installation to the Desktop.
+
+## File "erap.preseed"
+This file is similar to *er.preseed* but copies to scripts at the end of the installation to the Desktop.
+
 ## File "erase.sh"
 This file is a bashscript, which search for memorydevices an excecute the *hpdarm.sh* for every of them. Only the last device is excluded, because this is mostly the installmedium.
 Because the livesystem, which makes the installation, has the most memorydevices declared as frozen, the script suspends the computer automaticly. It must be "waked up" manually by pressing the power button after the screen turns black.
