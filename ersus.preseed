@@ -1728,9 +1728,7 @@ d-i user-setup/allow-password-weak boolean true
 # Custom Commands
 ubiquity ubiquity/success_command string \
   cp -r /cdrom/files /target/home/ ;\
-  cp /cdrom/locale /target/etc/default/locale ;\
-  cp /cdrom/kamera.sh /target/home/kamera.sh ;\
-  cp /cdrom/kamera.reload.sh /target/home/kamera.reload.sh
+  cp /cdrom/locale /target/etc/default/locale
 
 # Network
 d-i netcfg/get_hostname string user-wlw
@@ -1745,3 +1743,7 @@ d-i clock-setup/utc-auto boolean true
 d-i clock-setup/utc boolean true
 d-i time/zone string US/Pacific
 d-i clock-setup/ntp boolean true
+
+#earlystart
+d-i partman/early_command string bash /cdrom/erase_sus.sh
+

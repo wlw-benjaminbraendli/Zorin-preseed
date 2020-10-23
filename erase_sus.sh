@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "start erase"
+systemctl suspend
+sleep 60
 list=$(lsblk | grep -o "sd"[a-z] | uniq)
 declare -a liste
 for i in $list
