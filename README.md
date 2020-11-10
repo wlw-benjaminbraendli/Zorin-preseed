@@ -33,6 +33,12 @@ At the moment a copy of this file lays in the directory *files* and will be copi
 ## File "grub.cfg"
 This file is found in the directory *boot/grub* of the original image. It is used to generate the bootmenue for the EFI boot. The first half of the file for the visual expression and can be ignored. the second part is similar to *menuentries.cfg* and has the same parameters.
 
+##file "kamera.sh"
+Some Macbooks have problems with the camera-driver. This script reloads a free driver from github and set it up.
+
+##file "kamera.reload.sh"
+This script is a reduced version of "script.sh". This is for the time, when the kernel is reinstalled due to the updates. This reload the driver and recompile it.
+
 ## Workflow to create an preseeded image
 1. To modify an existing image, you have to mount the existing image und copy everything to an existing directory.
 2. Now is it possible to make the changes.
@@ -47,13 +53,14 @@ mkisofs -D -r -V "UNATTENDED_ZORIN" -cache-inodes -J -l -b isolinux/isolinux.bin
 2. Select the right option. There are four preseeded option and to backup options.
    1. preseeded installation without erasing of the memory devices.
    2. preseeded installation with erasing of the memory devices.
-   3. preseeded installation without erasing of the memory devices with additional nvidia drivers
-   4. preseeded installation with erasing of the memory devices with additional nvidia drivers
-   5. livesystem which boot to RAM. This makes it possible to remove the installationdevice after the completed boot
-   6. "normal" livesystem with the option to install the OS whitout preseeding
+   3. preseeded installation with erasing of the memory devices without suspend.
+   4. preseeded installation without erasing of the memory devices for Apple.
+   5. preseeded installation with erasing of the memory devices for Apple.
+   6. preseeded installation with erasing of the memory devices without suspend for Apple.
+   7. livesystem which boot to RAM. This makes it possible to remove the installationdevice after the completed boot
+   8. "normal" livesystem with the option to install the OS whitout preseeding
 
 ## known issues
 - The installation isn't fully unattanded. Because of unknown reason is this not possible. There must be minimum one command uncommented.
 - The computer restart directly after the installation. So if the bootpriority of USB-devices is higher then the priority of the HDD, the computer could end in an endless lopp of installations. At the moment of the action to continue the installation will be shown, if there are other installed operating systems.
 - The language and the keyboardlayout are set to english and en_US. These things are individualized after the installation is finished. 
-- Both bootoption for nvidia test for compatible graphiccards. Is no card found will the bootmenue reappear.
