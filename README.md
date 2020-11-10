@@ -33,10 +33,10 @@ At the moment a copy of this file lays in the directory *files* and will be copi
 ## File "grub.cfg"
 This file is found in the directory *boot/grub* of the original image. It is used to generate the bootmenue for the EFI boot. The first half of the file for the visual expression and can be ignored. the second part is similar to *menuentries.cfg* and has the same parameters.
 
-##file "kamera.sh"
+## File "kamera.sh"
 Some Macbooks have problems with the camera-driver. This script reloads a free driver from github and set it up.
 
-##file "kamera.reload.sh"
+## File "kamera.reload.sh"
 This script is a reduced version of "script.sh". This is for the time, when the kernel is reinstalled due to the updates. This reload the driver and recompile it.
 
 ## Workflow to create an preseeded image
