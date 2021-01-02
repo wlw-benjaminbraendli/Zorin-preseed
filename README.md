@@ -51,7 +51,7 @@ This script is a reduced version of "script.sh". This is for the time, when the 
 ## Workflow to create an preseeded image
 
 ### only the preseeding
-1. To modify an existing image, you have to mount the existing image und copy everything to an existing directory.
+1. To modify an existing image, you have to mount the existing image with 'sudo mount -o loop image.img mnt' und copy everything to an existing directory.
 2. Now is it possible to make the changes.
 3. With the following command you can creat a *.iso* file from the working directory. 
 
